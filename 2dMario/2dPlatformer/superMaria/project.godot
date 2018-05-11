@@ -13,7 +13,3 @@ config_version=3
 config/name="superMaria"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
