@@ -25,7 +25,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Player" type="Area2D" index="0" groups=[
+[node name="Player" type="Area2D" groups=[
 "joueurs",
 ]]
 
@@ -49,7 +49,7 @@ playing = true
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite" index="0"]
 
-position = Vector2( 0, -99.9091 )
+position = Vector2( 4.68854, -165.243 )
 anchor_mode = 1
 rotating = false
 current = true
