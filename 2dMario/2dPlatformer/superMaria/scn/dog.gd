@@ -1,6 +1,6 @@
 extends Area2D
 
-const MOVE_SPEED = 25.0
+const MOVE_SPEED = 51.0
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -10,6 +10,7 @@ func _ready():
 func _process(delta):
 	var input_dir = Vector2()
 	input_dir.x = 1.0
-
+	$AnimatedSprite.animation = "cours"
+	$AnimatedSprite.play()
 	position += (delta * MOVE_SPEED) * input_dir
 	pass

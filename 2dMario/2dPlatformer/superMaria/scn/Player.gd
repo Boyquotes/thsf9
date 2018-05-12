@@ -2,8 +2,7 @@ extends Area2D
 
 var Level = preload("res://scn/Level.tscn")
 
-const MOVE_SPEED = 2500.0
-const JUMP_SPEED = 6
+const MOVE_SPEED = 250.0
 
 var saute = false
 var temps_saut = 1
@@ -53,7 +52,6 @@ func _process(delta):
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.play()
 
-
 	#saute
 	if saute == false:
 		if get_position().y < 558 :
@@ -73,5 +71,5 @@ func _on_Player_area_entered(area):
 		print('le chien nous touche')
 		is_game_over = true
 		#emit_signal("gameOver")
-		queue_free()
+		#queue_free()
 	pass # replace with function body

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scn/Level.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scn/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scn/dog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scn/dog.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scn/Player.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -12,12 +12,12 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="dog" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 831.209, 527.197 )
+position = Vector2( 89.166, 540.024 )
 
-[node name="dog" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 89.166, 559.024 )
+position = Vector2( 831.209, 532.197 )
 
 
