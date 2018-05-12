@@ -13,6 +13,11 @@ var is_game_over = false
 
 signal gameOver
 
+var anim=""
+
+#cache the sprite here for fast access (we will set scale to flip it often)
+onready var sprite = $sprite
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -31,18 +36,32 @@ func _process(delta):
 #	if Input.is_key_pressed(KEY_DOWN):
 #		input_dir.y += 1.0
 	if Input.is_key_pressed(KEY_LEFT):
+		$AnimatedSprite.animation = "cours"
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play()
 		input_dir.x -= 1.0
 	if Input.is_key_pressed(KEY_RIGHT):
+		$AnimatedSprite.animation = "cours"
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play()
 		input_dir.x += 1.0
 
 	position += (delta * MOVE_SPEED) * input_dir
-	
+
+	# Animation
+	if input_dir.length() == 0:
+		$AnimatedSprite.animation = "default"
+		$AnimatedSprite.play()
+
+
+	#saute
 	if saute == false:
 		if get_position().y < 558 :
 			set_position( Vector2( get_position().x, get_position().y + 2 ) )
 	else:
 		set_position( Vector2( get_position().x, get_position().y - 2 ) )
 		
+	pass
 
 func _input(event):
 	if event.is_action_pressed( "saute" ):
