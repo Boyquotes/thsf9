@@ -9,8 +9,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	print(position)
-	print(motion_mirroring)
-
 	position.x = position.x - 70 * delta
 	pass
