@@ -1,6 +1,7 @@
 extends Area2D
 
 var Level = preload("res://scn/Level.tscn")
+var dog = preload("res://scn/dog.tscn")
 
 const MOVE_SPEED = 250.0
 
@@ -11,6 +12,7 @@ var temps_saut_timer = 0
 var is_game_over = false
 
 signal gameOver
+signal chienAbattu
 
 var attack=false
 var vie = 5
@@ -65,6 +67,14 @@ func _input(event):
 		attack = true
 		$AnimatedSprite.animation = "coup"
 		print("attaqueSingleton")
+		print(position)
+		var dog_instance = dog.instance()
+		print(dog_instance.position)
+		var distance_ennemi = position.x - dog_instance.position.x
+		print(distance_ennemi)
+		if distance_ennemi < 0 and distance_ennemi > -200:
+			print("on peut lincher")
+			emit_signal("chienAbattu")
 	if event.is_action_released("attack"):
 		$AnimatedSprite.animation = "default"
 		attack = false

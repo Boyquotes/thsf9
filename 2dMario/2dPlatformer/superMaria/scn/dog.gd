@@ -2,6 +2,8 @@ extends Area2D
 
 const MOVE_SPEED = 350.0
 
+var Player = preload("res://scn/Player.tscn")
+
 var monTerritoire = false
 signal attaqueEnCours
 signal chienTresProche
@@ -9,6 +11,8 @@ signal chienTresProche
 func _ready():
 	$AnimatedSprite.animation = "cours"
 	$AnimatedSprite.play()
+#	var Player_instance = Player.instance()
+#	Player_instance.connect("chienAbattu", Player_instance, "_on_chienAbattu")
 	pass
 
 func _process(delta):
@@ -35,3 +39,6 @@ func _on_dog_area_entered(area):
 		print("tres proche")
 		emit_signal("chienTresProche")
 		pass # replace with function body
+		
+#func _on_chienAbattu():
+#	print('virer le chien virer le chien virer le chien virer le chien')

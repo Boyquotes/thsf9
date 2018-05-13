@@ -5,6 +5,7 @@ var score = 0
 func _ready():
 	get_node("dog").connect("chienTresProche", self, "_on_chienTresProche")
 	get_node("dog").connect("attaqueEnCours", self, "_on_attaqueEnCours")
+	get_node("Player").connect("chienAbattu", self, "_on_chienAbattu")
 	pass
 
 func _process(delta):
@@ -23,5 +24,7 @@ func crypto_won():
 	score += 100
 	get_node("HUD/LabelCryptoMonnaie").text = "CryptoMonnaie: " + str(score)
 	
-	
+func _on_chienAbattu():
+	print('virer le chien virer le chien virer le chien virer le chien')
+	get_node("dog").queue_free()
 	

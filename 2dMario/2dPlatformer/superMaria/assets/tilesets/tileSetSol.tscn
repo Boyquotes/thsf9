@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/img/black-and-white-black-and-white-rough-978503.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/img/mur_droite.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/img/mur_haut.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/img/mur_bas.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/img/mur_gauche.jpg" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="TileMap" type="TileMap"]
+[node name="TileMap" type="TileMap" index="0"]
 
 mode = 0
 tile_set = null
@@ -26,18 +30,25 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
+__meta__ = {
+"_edit_vertical_guides_": [ 401.11, 472.318 ]
+}
 
-[node name="Node2D" type="Node2D" parent="." index="0"]
+[node name="sol" type="Sprite" parent="." index="0"]
 
-position = Vector2( 427.158, 266.633 )
-
-[node name="Sprite" type="Sprite" parent="Node2D" index="0"]
-
-position = Vector2( 8.83139, 8.83139 )
+position = Vector2( 435.989, 275.464 )
 scale = Vector2( 1.35326, 1.35326 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Region", "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/Sprite" index="0"]
+[node name="mur_droite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 435.989, 275.464 )
+scale = Vector2( 1.35326, 1.35326 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mur_droite" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -47,10 +58,79 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sprite/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur_droite/StaticBody2D" index="0"]
 
 position = Vector2( 0.22714, 0.441638 )
 scale = Vector2( 2.48872, 2.50116 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+
+[node name="mur_haut" type="Sprite" parent="." index="2"]
+
+position = Vector2( 435.989, 275.464 )
+scale = Vector2( 1.35326, 1.35326 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mur_haut" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur_haut/StaticBody2D" index="0"]
+
+position = Vector2( 0.22714, 0.441638 )
+scale = Vector2( 2.48872, 2.50116 )
+shape = SubResource( 2 )
+
+[node name="mur_bas" type="Sprite" parent="." index="3"]
+
+position = Vector2( 435.989, 275.464 )
+scale = Vector2( 1.35326, 1.35326 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mur_bas" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur_bas/StaticBody2D" index="0"]
+
+position = Vector2( 0.22714, 0.441638 )
+scale = Vector2( 2.48872, 2.50116 )
+shape = SubResource( 2 )
+
+[node name="mur_gauche" type="Sprite" parent="." index="4"]
+
+position = Vector2( 435.989, 275.464 )
+scale = Vector2( 1.35326, 1.35326 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mur_gauche" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur_gauche/StaticBody2D" index="0"]
+
+position = Vector2( 0.22714, 0.441638 )
+scale = Vector2( 2.48872, 2.50116 )
+shape = SubResource( 2 )
 
 

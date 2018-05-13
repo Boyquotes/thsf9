@@ -17,10 +17,11 @@ func _process(delta):
 	
 #	print("size")
 	#var size = player.get_size()
-	print(pos.y)
-	print(posArea2d.y)
-	if pos.y > posArea2d.y:
-		get_tree().change_scene("res://main.tscn")
+	print(floor(pos.y))
+	print(floor(posArea2d.y))
+	if floor(pos.y) < floor(posArea2d.y) +50:
+		print("changer la scene")
+		get_tree().change_scene("res://scn/GameBeer.tscn")
 #	print('ici')
 #	print(player_world_pos)
 	# Called every frame. Delta is time since last frame.
