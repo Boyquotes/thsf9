@@ -13,6 +13,7 @@ var is_game_over = false
 signal gameOver
 
 var anim=""
+var vie = 5
 
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
@@ -39,19 +40,19 @@ func _process(delta):
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play()
 		input_dir.x -= 1.0
+	
 	if Input.is_key_pressed(KEY_RIGHT):
 		$AnimatedSprite.animation = "cours"
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play()
 		input_dir.x += 1.0
-
-	position += (delta * MOVE_SPEED) * input_dir
-
-	# Animation
-	if input_dir.length() == 0:
+		
+	if !Input.is_key_pressed(KEY_RIGHT) && !Input.is_key_pressed(KEY_LEFT):
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.play()
 
+	position += (delta * MOVE_SPEED) * input_dir
+	print(position)
 	#saute
 	if saute == false:
 		if get_position().y < 530 :
@@ -62,14 +63,22 @@ func _process(delta):
 	pass
 
 func _input(event):
+	if event.is_action_pressed( "attack" ):
+		print("attaque")
+		$AnimatedSprite.animation = "coup"
+		$AnimatedSprite.play()
+		print("attaque2")
 	if event.is_action_pressed( "saute" ):
 		saute = true
+	pass
 
 func _on_Player_area_entered(area):
 	print('on me touche')
 	if area.is_in_group("dogs"):
 		print('le chien nous touche')
 		is_game_over = true
+		vie -= 1
+		get_node("../HUD/Vie").text = "Vie: " + str(vie)
 		#emit_signal("gameOver")
 		#queue_free()
 	pass # replace with function body

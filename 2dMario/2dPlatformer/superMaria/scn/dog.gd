@@ -1,6 +1,6 @@
 extends Area2D
 
-const MOVE_SPEED = 51.0
+const MOVE_SPEED = 350.0
 
 signal monTerritoire
 
@@ -20,6 +20,13 @@ func _process(delta):
 
 func _on_Territoire_area_entered(area):
 	if !area.is_in_group("dogs"):
+		$AnimatedSprite.stop()
 		print("c'est mon territoire")
-		emit_signal("monTerritoire") 
+		$AnimatedSprite.animation = "attack"
+		$AnimatedSprite.play()
+	pass # replace with function body
+
+
+func _on_dog_area_entered(area):
+	print("le chien attaque")
 	pass # replace with function body

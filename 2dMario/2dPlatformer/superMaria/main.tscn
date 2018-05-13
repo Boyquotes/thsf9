@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://scn/Level.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scn/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scn/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scn/cryptoMonnaies.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scn/Agent.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -31,10 +32,22 @@ position = Vector2( 831.749, 531.657 )
 
 [node name="CryptoMonnaies" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 696.222, 515.929 )
+position = Vector2( 599.814, 314.745 )
 
-[node name="CryptoMonnaies2" parent="." index="5" instance=ExtResource( 6 )]
+[node name="CryptoMonnaies3" parent="." index="5" instance=ExtResource( 6 )]
 
-position = Vector2( 466.318, 515.929 )
+position = Vector2( 653.946, 314.387 )
+
+[node name="CryptoMonnaies4" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 341.945, 523.387 )
+
+[node name="CryptoMonnaies2" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 548.577, 314.58 )
+
+[node name="Agent" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( -605.924, 484.343 )
 
 

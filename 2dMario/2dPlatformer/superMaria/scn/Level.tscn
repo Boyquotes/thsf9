@@ -146,12 +146,13 @@ shape = SubResource( 2 )
 
 [node name="logo-mixart" type="Sprite" parent="." index="7"]
 
-position = Vector2( -1042.25, 233.102 )
+position = Vector2( -1240.57, 325.882 )
+scale = Vector2( 0.451047, 0.451047 )
 texture = ExtResource( 8 )
 
 [node name="THSF2017" type="Sprite" parent="." index="8"]
 
-position = Vector2( -289.7, 288.467 )
+position = Vector2( -289.7, 286.417 )
 texture = ExtResource( 9 )
 
 [node name="robot_03" type="Sprite" parent="." index="9"]

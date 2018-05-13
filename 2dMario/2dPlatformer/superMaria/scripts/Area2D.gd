@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_UP) and dedans == true:
-		get_tree().change_scene("res://scn/Level2.tscn")
+		get_tree().change_scene("res://game.tscn")
 	pass
 
 

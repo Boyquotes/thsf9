@@ -27,7 +27,8 @@ height = 20.0
 
 [node name="CryptoMonnaies" type="Area2D" index="0"]
 
-position = Vector2( 485.363, 310.512 )
+position = Vector2( 505.105, 330.254 )
+scale = Vector2( 0.383063, 0.383063 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
