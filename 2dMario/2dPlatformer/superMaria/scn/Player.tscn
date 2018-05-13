@@ -2,11 +2,11 @@
 
 [ext_resource path="res://scn/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/ninja/normal.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/ninja/blesse1.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/ninja/cours1.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/ninja/coupDePied.png" type="Texture" id=5]
-[ext_resource path="res://assets/img/ninja/cours2.png" type="Texture" id=6]
-[ext_resource path="res://assets/img/ninja/cours3.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/ninja/cours1.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/ninja/cours2.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/ninja/cours3.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/ninja/coupDePied.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/ninja/blesse1.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -16,19 +16,19 @@ animations = [ {
 "name": "default",
 "speed": 4.97
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": false,
-"name": "blessee1",
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "cours",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "coup",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "cours",
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "blessee1",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -56,18 +56,17 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Visib
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-editor/display_folded = true
 frames = SubResource( 1 )
 animation = "default"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite" index="0"]
 
-position = Vector2( 4.68854, -165.243 )
+position = Vector2( -211.16, -283.392 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 1.3, 1.3 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
