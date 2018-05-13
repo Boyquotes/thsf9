@@ -10,9 +10,7 @@ var mouse_btn_pressed
 var throw_vel = 0
 
 func _ready():
-	print("debut")
 	spawn_beer()
-	print("fin")
 
 func _on_CustomerTimer_timeout():
 	var customer = customer_res.instance()
@@ -59,6 +57,8 @@ func _on_ClearsBeers_pressed():
 		for child in $Beers.get_children():
 			child.queue_free()
 
+
 func _on_Area51_body_entered( body ):
 	if body.has_method("throw_beer"):
 		body.get_node("AnimationPlayer").play("FadeOut")
+		

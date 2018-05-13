@@ -69,7 +69,7 @@ position = Vector2( 159.473, 235.734 )
 
 [node name="CustomerSpawn" type="Position2D" parent="." index="4"]
 
-position = Vector2( 279.05, 325.653 )
+position = Vector2( 287.05, 403.653 )
 scale = Vector2( 0.622881, 0.611197 )
 
 [node name="BeerTimer" type="Timer" parent="." index="5"]
@@ -90,14 +90,16 @@ autostart = true
 
 [node name="Floor" type="ColorRect" parent="." index="8"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -7.0
-margin_top = 497.0
-margin_right = 964.0
-margin_bottom = 507.0
+margin_left = -9.0
+margin_top = 467.0
+margin_right = 962.0
+margin_bottom = 477.0
+rect_rotation = -0.107913
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -108,14 +110,15 @@ color = Color( 0.125, 0.0322266, 0, 1 )
 
 [node name="Floor2" type="ColorRect" parent="." index="9"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -6.0
-margin_top = 506.0
-margin_right = 964.0
-margin_bottom = 541.0
+margin_left = -8.0
+margin_top = 476.0
+margin_right = 962.0
+margin_bottom = 511.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -126,6 +129,7 @@ color = Color( 0.289062, 0.125644, 0.0688782, 1 )
 
 [node name="UI" type="Control" parent="." index="10"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0

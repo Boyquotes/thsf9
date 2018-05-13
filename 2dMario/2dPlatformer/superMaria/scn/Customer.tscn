@@ -46,10 +46,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Customer" type="Sprite"]
+[node name="Customer" type="Sprite" index="0"]
 
 modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 0.622881, 0.611197 )
+position = Vector2( 35.1451, 86.4799 )
+scale = Vector2( 1.16358, 1.14175 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Pause", "Visibility" ]

@@ -1,8 +1,9 @@
 extends Sprite
-
 var beer
+var compteur = 0
 
 func _ready():
+	var compteur = 0
 	$AnimationPlayer.play("FadeIn")
 
 func _on_BeerArea_body_entered( body ):
@@ -23,4 +24,6 @@ func _on_Timer_timeout():
 func _on_AnimationPlayer_animation_finished( anim_name ):
 	if anim_name == "FadeOut":
 #		beer.queue_free()
+		compteur += 1
+		print(compteur)
 		self.queue_free()

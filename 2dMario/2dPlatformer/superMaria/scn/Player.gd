@@ -55,7 +55,7 @@ func _process(delta):
 
 	#saut
 	if saute == false:
-		if get_position().y < 530 :
+		if get_position().y < 550 :
 			set_position( Vector2( get_position().x, get_position().y + 8 ) )
 	else:
 		set_position( Vector2( get_position().x, get_position().y - 6 ) )
