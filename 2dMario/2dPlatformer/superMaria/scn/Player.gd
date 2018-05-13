@@ -5,14 +5,14 @@ var Level = preload("res://scn/Level.tscn")
 const MOVE_SPEED = 250.0
 
 var saute = false
-var temps_saut = 1
+var temps_saut = 0.8
 var temps_saut_timer = 0
 
 var is_game_over = false
 
 signal gameOver
 
-var anim=""
+var attack=false
 var vie = 5
 
 #cache the sprite here for fast access (we will set scale to flip it often)
@@ -21,6 +21,7 @@ onready var sprite = $sprite
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	$AnimatedSprite.play()
 	set_process_input( true )
 
 func _process(delta):
@@ -38,37 +39,36 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
 		$AnimatedSprite.animation = "cours"
 		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play()
 		input_dir.x -= 1.0
 	
 	if Input.is_key_pressed(KEY_RIGHT):
 		$AnimatedSprite.animation = "cours"
 		$AnimatedSprite.flip_h = false
-		$AnimatedSprite.play()
 		input_dir.x += 1.0
-		
-	if !Input.is_key_pressed(KEY_RIGHT) && !Input.is_key_pressed(KEY_LEFT):
+	if !Input.is_key_pressed(KEY_RIGHT) and !Input.is_key_pressed(KEY_LEFT) and attack == false:
 		$AnimatedSprite.animation = "default"
-		$AnimatedSprite.play()
 
 	position += (delta * MOVE_SPEED) * input_dir
-	print(position)
-	#saute
+#	print(position)
+
+	#saut
 	if saute == false:
 		if get_position().y < 530 :
-			set_position( Vector2( get_position().x, get_position().y + 2 ) )
+			set_position( Vector2( get_position().x, get_position().y + 8 ) )
 	else:
-		set_position( Vector2( get_position().x, get_position().y - 2 ) )
+		set_position( Vector2( get_position().x, get_position().y - 6 ) )
 		
 	pass
 
 func _input(event):
-	if event.is_action_pressed( "attack" ):
-		print("attaque")
+	if event.is_action_pressed("attack"):
+		attack = true
 		$AnimatedSprite.animation = "coup"
-		$AnimatedSprite.play()
-		print("attaque2")
-	if event.is_action_pressed( "saute" ):
+		print("attaqueSingleton")
+	if event.is_action_released("attack"):
+		$AnimatedSprite.animation = "default"
+		attack = false
+	if event.is_action_pressed("saute"):
 		saute = true
 	pass
 

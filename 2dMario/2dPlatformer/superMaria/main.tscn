@@ -26,7 +26,7 @@ position = Vector2( -361.119, 540.024 )
 
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 831.749, 531.657 )
+position = Vector2( 456.499, 531.657 )
 
 [node name="HUD" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -48,6 +48,6 @@ position = Vector2( 548.577, 314.58 )
 
 [node name="Agent" parent="." index="8" instance=ExtResource( 7 )]
 
-position = Vector2( -605.924, 484.343 )
+position = Vector2( -851.99, 478.191 )
 
 

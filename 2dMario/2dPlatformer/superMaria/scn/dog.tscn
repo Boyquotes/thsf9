@@ -2,12 +2,12 @@
 
 [ext_resource path="res://scn/dog.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/dog/normal.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/dog/cours2.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/dog/cours1.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/dog/cours3.png" type="Texture" id=5]
-[ext_resource path="res://assets/img/dog/cours4.png" type="Texture" id=6]
-[ext_resource path="res://assets/img/dog/gueuleOuverte.png" type="Texture" id=7]
-[ext_resource path="res://assets/img/dog/gueuleOuverte2.png" type="Texture" id=8]
+[ext_resource path="res://assets/img/dog/gueuleOuverte.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/dog/gueuleOuverte2.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/dog/cours2.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/dog/cours1.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/dog/cours3.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/dog/cours4.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -17,15 +17,15 @@ animations = [ {
 "name": "default",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "cours",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "cours",
+"speed": 8.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -66,7 +66,9 @@ position = Vector2( 0.320676, 0.230762 )
 scale = Vector2( 2.42613, 2.37131 )
 shape = SubResource( 2 )
 
-[node name="Territoire" type="Area2D" parent="." index="2"]
+[node name="Territoire" type="Area2D" parent="." index="2" groups=[
+"dogs",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

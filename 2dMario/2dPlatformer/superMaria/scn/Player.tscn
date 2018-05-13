@@ -2,33 +2,33 @@
 
 [ext_resource path="res://scn/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/ninja/normal.png" type="Texture" id=2]
-[ext_resource path="res://assets/img/ninja/cours1.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/ninja/coupDePied.png" type="Texture" id=4]
-[ext_resource path="res://assets/img/ninja/cours2.png" type="Texture" id=5]
-[ext_resource path="res://assets/img/ninja/cours3.png" type="Texture" id=6]
-[ext_resource path="res://assets/img/ninja/blesse1.png" type="Texture" id=7]
+[ext_resource path="res://assets/img/ninja/blesse1.png" type="Texture" id=3]
+[ext_resource path="res://assets/img/ninja/cours1.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/ninja/coupDePied.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/ninja/cours2.png" type="Texture" id=6]
+[ext_resource path="res://assets/img/ninja/cours3.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
-"loop": true,
+"loop": false,
 "name": "default",
+"speed": 4.97
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "blessee1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": false,
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
 "name": "coup",
-"speed": 2.0
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "cours",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "blessee1",
 "speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
@@ -56,6 +56,7 @@ _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Visib
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+editor/display_folded = true
 frames = SubResource( 1 )
 animation = "default"
 playing = true
